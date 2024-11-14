@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import App from "../App";
+import Usuario from "../Pages/Usuario";
 
 export function AppRoutes() {
   return (
     <Routes>
-        <Route index path="/" element={<App/>}/>
+      <Route path="/" element={<App />} />
+      <Route path="usuario" element={<Usuario />} />
     </Routes>
   );
 }

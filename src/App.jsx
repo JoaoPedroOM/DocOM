@@ -1,6 +1,7 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Lights } from './components/ui/Lights'
+import { Link } from 'react-router-dom'
 
 const App = () => {
   return (
@@ -30,10 +31,10 @@ const App = () => {
           Criado para Quem Exige Simplicidade e Eficiência
           </div>
           <div className="mt-5 w-full flex sm:flex-row max-sm:flex-col justify-center sm:gap-10 gap-4 text-white">
-            <button className="group h-10 sm:h-8 w-full sm:w-36 bg-gradient-to-br from-green-950 to-blue-950 border border-green-900 rounded-lg flex items-center justify-center gap-1.5">
+            <Link to="/usuario" className="group h-10 sm:h-8 w-full sm:w-36 bg-gradient-to-br from-green-950 to-blue-950 border border-green-900 rounded-lg flex items-center justify-center gap-1.5">
               <span>Começar Agora</span>
               <span className="group-hover:translate-x-0.5 transition-all">&rarr;</span>
-            </button>
+            </Link>
             <button className="h-8 flex items-center justify-center underline">
               <span>entre em contato</span>
             </button>
