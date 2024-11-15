@@ -1,14 +1,20 @@
 import { FaGithub } from 'react-icons/fa';
-import { IconBrandGoogleFilled } from '@tabler/icons-react'
-import { Account } from '../components/ui/Account'
+import { IconBrandGoogleFilled } from '@tabler/icons-react';
+import { Account } from '../components/ui/Account';
+import { Boxes } from '../components/ui/background-boxes';
+import { cn } from '../utils/cn';
 
 const Usuario = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-black text-white">
-      <Account firstTab={<Tab1 />} secondTab={<Tab2 />} defaultTab={0} />
+    <div className="flex h-screen w-full items-center justify-center bg-black text-white relative overflow-hidden">
+      <div className="relative w-full justify-center items-center flex z-10">
+        <Account firstTab={<Tab1 />} secondTab={<Tab2 />} defaultTab={0} />
+      </div>
+
+      <Boxes className="absolute top-0 left-0 w-full h-full z-0" />
     </div>
-  )
-}
+  );
+};
 
 const Tab1 = () => (
   <div className="flex w-full flex-col items-start justify-start gap-4 rounded-xl p-3 pb-4 bg-black border-neutral-700">
@@ -58,7 +64,7 @@ const Tab1 = () => (
       </button>
     </div>
   </div>
-)
+);
 
 const Tab2 = () => (
   <div className="flex w-full flex-col items-start justify-start gap-4 rounded-xl p-3 pb-4 bg-black border-neutral-700">
@@ -104,10 +110,10 @@ const Tab2 = () => (
         <IconBrandGoogleFilled /> <div>Continue com o Google</div>
       </button>
       <button className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950">
-        <FaGithub  size={23} /> <div>Continue com o GitHub</div>
+        <FaGithub size={23} /> <div>Continue com o GitHub</div>
       </button>
     </div>
   </div>
-)
+);
 
 export default Usuario;
