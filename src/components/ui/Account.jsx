@@ -19,7 +19,7 @@ export const Account = ({ defaultTab = 0, firstTab, secondTab }) => {
 
 const Switch = ({ setTab, currentTab }) => (
   <div
-    className={`relative flex w-full items-center rounded-lg py-1 bg-neutral-800 text-white`}>
+    className={`relative flex w-full items-center rounded-lg py-1 bg-neutral-800 text-white font-second`}>
     <motion.div
       transition={{ type: 'keyframes', duration: 0.15, ease: 'easeInOut' }}
       animate={currentTab === 0 ? { x: 4 } : { x: '98%' }}

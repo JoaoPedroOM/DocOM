@@ -20,6 +20,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        main: 'Arvo',
+        second: 'Montserrat'
+      },
       animation: {
         moveUp: 'moveUp 1.4s ease forwards',
         appear: 'appear 1s 1s forwards'

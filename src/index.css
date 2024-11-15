@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .gradient-text-blue {
+      background-image: linear-gradient(to right, rgb(0, 123, 255), rgb(51, 145, 255), rgb(91, 169, 255), rgb(135, 191, 255), rgb(174, 202, 255), rgb(204, 214, 255), rgb(230, 226, 255), rgb(255, 240, 255));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
