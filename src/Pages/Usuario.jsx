@@ -21,14 +21,14 @@ const Tab1 = () => {
   const handleGoogleLogin = () => {
     openSignIn({ 
       strategy: 'oauth_google', 
-      redirectUrl: window.location.origin + '/documents'
+      redirectUrl: window.location.origin + '/createDocument'
     });
     
   };
 
   const handleGitHubLogin = () => {
     openSignIn({ strategy: 'oauth_github',
-      redirectUrl: window.location.origin + '/documents'
+      redirectUrl: window.location.origin + '/createDocument'
      });
   };
 
@@ -68,11 +68,15 @@ const Tab2 = () => {
   const { openSignUp } = useClerk();
 
   const handleGoogleSignup = () => {
-    openSignUp({ strategy: 'oauth_google' });
+    openSignUp({ strategy: 'oauth_google',
+      redirectUrl: window.location.origin + '/createDocument'
+     });
   };
 
   const handleGitHubSignup = () => {
-    openSignUp({ strategy: 'oauth_github' });
+    openSignUp({ strategy: 'oauth_github',
+      redirectUrl: window.location.origin + '/createDocument'
+     });
   };
 
   return (
