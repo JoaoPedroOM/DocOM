@@ -10,7 +10,7 @@ import {
 const Header = () => {
   return (
     <header className="flex justify-between items-center px-[10%] py-6 shadow-lg lg:mb-7">
-      <Link>
+      <Link to="/createDocument">
         <span>
           <h3 className="gradient-text-blue text-2xl font-bold font-main">
             DocOM

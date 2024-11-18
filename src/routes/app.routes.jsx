@@ -4,6 +4,7 @@ import { PublicRoute } from "../utils/PublicRoute";
 import App from "../App";
 import Usuario from "../Pages/Usuario";
 import Document from "../Pages/Document";
+import Home from "../Pages/Home";
 
 export function AppRoutes() {
   return (
