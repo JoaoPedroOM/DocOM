@@ -29,3 +29,12 @@ export const saveDocument = mutation({
     }
   },
 });
+
+export const deleteDocument = mutation({
+  args: { 
+    documentId: v.string() 
+  },
+  handler: async (ctx, args) => {
+    return await ctx.db.delete(args.documentId);
+  },
+});
