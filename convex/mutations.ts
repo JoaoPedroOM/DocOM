@@ -38,3 +38,19 @@ export const deleteDocument = mutation({
     return await ctx.db.delete(args.documentId);
   },
 });
+
+export const updateDocumentTitle = mutation({
+  args: {
+    documentId: v.string(),
+    title: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const document = await ctx.db.get(args.documentId);
+    
+    if (!document) {
+      throw new Error('Documento não encontrado');
+    }
+
+    return await ctx.db.patch(args.documentId, { title: args.title });
+  }
+});
