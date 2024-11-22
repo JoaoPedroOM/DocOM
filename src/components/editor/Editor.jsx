@@ -73,13 +73,13 @@ const Editor = () => {
       });
       quillRef.current = quill;
     }
-
-    if (document?.content) {
-      quillRef.current.root.innerHTML = document.content;
+  
+    if (document && document.content) {
+      quillRef.current?.root.innerHTML = document.content;
     } else {
-      quillRef.current.root.innerHTML = "";
+      quillRef.current?.root.innerHTML = "";
     }
-
+  
   }, [document, id]);
 
   return (
