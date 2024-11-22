@@ -7,14 +7,14 @@ import { v4 as uuidv4 } from "uuid";
 import docs from "../assets/Docs.png";
 import ButtonStart from "../components/ui/ButtonStart";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from "@clerk/clerk-react";
 import { useQuery } from "convex/react";
 import CreatedAtMessage from "../utils/CreatedAtMessage"
 
 const Home = () => {
   const { user } = useUser();
-  const documents = useQuery(api.queries.getUserDocuments, { 
-    userId: user.id 
+  const documents = useQuery(api.queries.getUserDocuments, {
+    userId: user.id
   });
   const deleteDocument = useMutation(api.mutations.deleteDocument);
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const Home = () => {
   function handleDelete(event, documentId) {
     event.stopPropagation();
     setDeletingDocumentId(documentId);
-    
+
     deleteDocument({ documentId });
   }
 
@@ -49,7 +49,8 @@ const Home = () => {
 
         {documents && documents.length > 0 ? (
           documents
-            .filter(doc => doc._id !== deletingDocumentId)
+            .filter((doc) => doc._id !== deletingDocumentId)
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
             .map((doc) => (
               <div
                 key={doc._id}
@@ -66,11 +67,11 @@ const Home = () => {
                       {doc.title}
                     </h3>
                     <div className="font-second text-[12px]">
-                      <CreatedAtMessage createdAt={doc.createdAt}/>
+                      <CreatedAtMessage createdAt={doc.createdAt} />
                     </div>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={(event) => handleDelete(event, doc._id)}
                   className="hover:text-red-500 transition-colors"
                 >
