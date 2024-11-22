@@ -75,9 +75,11 @@ const Editor = () => {
     }
   
     if (quillRef.current) {
-      if (document && document.content) {
+      if (document?.content) {
+        console.log('Configurando o conteúdo do documento:', document.content);
         quillRef.current.root.innerHTML = document.content;
       } else {
+        console.log('Conteúdo não encotrado');
         quillRef.current.root.innerHTML = "";
       }
     }
