@@ -26,6 +26,8 @@ const Editor = () => {
   const editorRef = useRef(null);
   const quillRef = useRef(null);
 
+  const [loading, setLoading] = useState(true); 
+
   const handleSave = () => {
     const trimmedTitle = title.trim();
     if (!trimmedTitle) {
@@ -59,7 +61,13 @@ const Editor = () => {
   }, [document]);
 
   useEffect(() => {
-    if (editorRef.current && !quillRef.current) {
+    if (document) {
+      setLoading(false); 
+    }
+  }, [document]);
+
+  useEffect(() => {
+    if (editorRef.current && !quillRef.current && !loading) {
       const quill = new Quill(editorRef.current, {
         theme: "snow",
         modules: {
@@ -73,8 +81,8 @@ const Editor = () => {
       });
       quillRef.current = quill;
     }
-  
-    if (quillRef.current && document && document.content) {
+
+    if (quillRef.current && document?.content) {
       console.log("Configurando o conteúdo do documento:", document.content);
       const delta = quillRef.current.clipboard.convert(document.content);
       quillRef.current.setContents(delta);
@@ -82,8 +90,8 @@ const Editor = () => {
       console.log("Conteúdo não encontrado");
       quillRef.current.root.innerHTML = "";
     }
-  }, [document, id]);
-  
+  }, [document, id, loading]);
+
   return (
     <div className="container mx-auto max-w-5xl px-6 py-8">
       <Toaster richColors />
