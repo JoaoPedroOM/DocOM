@@ -73,14 +73,16 @@ const Editor = () => {
       });
       quillRef.current = quill;
     }
-
-    if (document?.content) {
-      quillRef.current.root.innerHTML = document.content;
-    } else {
-      quillRef.current.root.innerHTML = "";
+  
+    if (document && quillRef.current) {
+      if (document.content) {
+        quillRef.current.root.innerHTML = document.content;
+      } else {
+        quillRef.current.root.innerHTML = ""; 
+      }
     }
-
-  }, [document, id]);
+  }, [document]);
+  
 
   return (
     <div className="container mx-auto max-w-5xl px-6 py-8">
