@@ -74,10 +74,12 @@ const Editor = () => {
       quillRef.current = quill;
     }
   
-    if (document && document.content) {
-      quillRef.current?.root.innerHTML = document.content;
-    } else {
-      quillRef.current?.root.innerHTML = "";
+    if (quillRef.current) {
+      if (document && document.content) {
+        quillRef.current.root.innerHTML = document.content;
+      } else {
+        quillRef.current.root.innerHTML = "";
+      }
     }
   
   }, [document, id]);
