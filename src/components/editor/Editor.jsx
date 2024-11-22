@@ -76,6 +76,7 @@ const Editor = () => {
   
     if (document && quillRef.current) {
       if (document.content) {
+        console.log("Dado do content: " + document.content)
         quillRef.current.root.innerHTML = document.content;
       } else {
         quillRef.current.root.innerHTML = ""; 
