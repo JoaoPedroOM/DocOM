@@ -73,19 +73,17 @@ const Editor = () => {
       });
       quillRef.current = quill;
     }
-
-    if (quillRef.current) {
-      if (document?.content) {
-        console.log("Configurando o conteúdo do documento:", document.content);
-        const delta = quillRef.current.clipboard.convert(document.content);
-        quillRef.current.setContents(delta);
-      } else {
-        console.log("Conteúdo não encotrado");
-        quillRef.current.root.innerHTML = "";
-      }
+  
+    if (quillRef.current && document && document.content) {
+      console.log("Configurando o conteúdo do documento:", document.content);
+      const delta = quillRef.current.clipboard.convert(document.content);
+      quillRef.current.setContents(delta);
+    } else if (quillRef.current) {
+      console.log("Conteúdo não encontrado");
+      quillRef.current.root.innerHTML = "";
     }
   }, [document, id]);
-
+  
   return (
     <div className="container mx-auto max-w-5xl px-6 py-8">
       <Toaster richColors />
