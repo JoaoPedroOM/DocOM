@@ -39,7 +39,7 @@ const Tab1 = () => {
       </div>
 
       <div className="relative mt-6 w-full">
-        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373]">
+        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373] bg-black">
           Ou
         </div>
         <div className="border-b border-neutral-300"></div>
@@ -86,7 +86,7 @@ const Tab2 = () => {
       </div>
 
       <div className="relative mt-6 w-full">
-        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373]">
+        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373] bg-black">
           Ou
         </div>
         <div className="border-b border-neutral-300"></div>
