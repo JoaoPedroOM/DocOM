@@ -39,23 +39,23 @@ const Tab1 = () => {
       </div>
 
       <div className="relative mt-6 w-full">
-        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400 dark:bg-black dark:text-neutral-500">
+        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373]">
           Ou
         </div>
-        <div className="border-b border-neutral-300 dark:border-neutral-800"></div>
+        <div className="border-b border-neutral-300"></div>
       </div>
 
       <div className="mt-6 flex w-full flex-col gap-4 font-main">
         <button
           onClick={handleGoogleLogin}
-          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950"
+          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white"
         >
           <IconBrandGoogleFilled /> <div>Continue com o Google</div>
         </button>
 
         <button
           onClick={handleGitHubLogin}
-          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950"
+          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white"
         >
           <FaGithub size={23} /> <div>Continue com o GitHub</div>
         </button>
@@ -86,23 +86,23 @@ const Tab2 = () => {
       </div>
 
       <div className="relative mt-6 w-full">
-        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400 dark:bg-black dark:text-neutral-500">
+        <div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-[#737373]">
           Ou
         </div>
-        <div className="border-b border-neutral-300 dark:border-neutral-800"></div>
+        <div className="border-b border-neutral-300"></div>
       </div>
 
       <div className="mt-6 flex w-full flex-col gap-4 font-main">
         <button
           onClick={handleGoogleSignup}
-          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950"
+          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white"
         >
           <IconBrandGoogleFilled /> <div>Continue com o Google</div>
         </button>
 
         <button
           onClick={handleGitHubSignup}
-          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950"
+          className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white"
         >
           <FaGithub size={23} /> <div>Continue com o GitHub</div>
         </button>
